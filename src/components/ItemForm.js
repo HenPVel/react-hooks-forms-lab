@@ -6,19 +6,19 @@ function ItemForm(props) {
     <form className="NewItem">
       <label>
         Name:
-        <input type="text" name="name" />
+        <input onChange={e => props.newItemNameChange(e.target.value)} type="text" name="name" />
       </label>
 
       <label>
         Category:
-        <select name="category">
+        <select onChange={e => props.newItemCategoryNameChange(e.target.value)} name="category">
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
         </select>
       </label>
 
-      <button type="submit">Add to List</button>
+      <button onClick={props.onItemFormSubmit} type="submit">Add to List</button>
     </form>
   );
 }
